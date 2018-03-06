@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CounterProduct from './Counter'
 
 const ProductItem = (props) => {
@@ -11,9 +11,7 @@ const ProductItem = (props) => {
         </p>
       </div>
       <div className="d-inline">
-        <p className="">
-          <CounterProduct product={product}/>
-        </p>
+        <CounterProduct product={product} sum={props.sum} substract={props.substract}/>
       </div>
     </li>
     )

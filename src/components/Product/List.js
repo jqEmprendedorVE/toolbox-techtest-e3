@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ProductItem from './Item'
 
 const ProductList = (props) => {
   const ProductItems = props.products.map((product)=>{
-    return <ProductItem key={product._id} product={product} />
+    return <ProductItem key={product._id} product={product} sum={props.sum} substract={props.substract}/>
   })
 
   return (
