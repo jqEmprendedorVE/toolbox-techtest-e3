@@ -46,6 +46,7 @@ class App extends Component {
           <h1 className="App-title">Minisite que consume una Api Restful</h1>
         </header>
         <br/>
+        <h4>Lista de productos</h4>
         <div className="row justify-content-center">
           <ProductList 
             products={this.state.products}
