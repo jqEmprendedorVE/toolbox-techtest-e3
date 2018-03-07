@@ -11,7 +11,10 @@ class App extends Component {
   constructor(props) {
     super(props)
 
-    this.state = { products: [] }
+    this.state = { 
+      products: [],
+      loadMessage: 'Espere mientras se active el servidor demo de Mongodb'
+    }
 
     this.getAllProducts()
 
@@ -23,6 +26,7 @@ class App extends Component {
   getAllProducts() {
     axios.get(urlapi + '/products').then(res => {
       this.setState({ products: res.data})
+      this.setState({ loadMessage: 'Sin data para mostrar'})
     })
   }
 
@@ -57,6 +61,7 @@ class App extends Component {
             products={this.state.products}
             sum={this.sumOneQtytoProduct}
             substract={this.substractOneQtytoProduct}
+            loadMessage={this.state.loadMessage}
           />
         </div>
         <div className="App-intro">
