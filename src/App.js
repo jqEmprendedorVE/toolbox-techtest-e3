@@ -37,6 +37,7 @@ class App extends Component {
   substractOneQtytoProduct(_id, id) {
     axios.post(`${urlapi}/products/substract/${_id}`).then(res=>{
       let products = this.state.products
+      if(products[id].quantity===0) return 
       --products[id].quantity
       this.setState({products})
     }) 
