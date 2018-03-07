@@ -11,7 +11,7 @@ const ProductItem = (props) => {
         </p>
       </div>
       <div className="d-inline">
-        <CounterProduct product={product} sum={props.sum} substract={props.substract}/>
+        <CounterProduct product={product} sum={props.sum} substract={props.substract} id={props.id}/>
       </div>
     </li>
     )

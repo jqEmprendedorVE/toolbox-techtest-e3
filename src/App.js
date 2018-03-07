@@ -26,15 +26,19 @@ class App extends Component {
     })
   }
 
-  sumOneQtytoProduct(_id) {
+  sumOneQtytoProduct(_id, id) {
     axios.post(`${urlapi}/products/sum/${_id}`).then(res=>{
-      this.getAllProducts()
+      let products = this.state.products
+      ++products[id].quantity
+      this.setState({products})
     })
   }
 
-  substractOneQtytoProduct(_id) {
+  substractOneQtytoProduct(_id, id) {
     axios.post(`${urlapi}/products/substract/${_id}`).then(res=>{
-      this.getAllProducts()
+      let products = this.state.products
+      --products[id].quantity
+      this.setState({products})
     }) 
   }
 
