@@ -31,7 +31,7 @@ class App extends Component {
   }
 
   sumOneQtytoProduct(_id, id) {
-    axios.post(`${urlapi}/products/sum/${_id}`).then(res=>{
+    axios.post(`${urlapi}/products/${_id}/sum`).then(res=>{
       let products = this.state.products
       products[id].quantity = res.data.product.quantity
       this.setState({products})
@@ -39,7 +39,7 @@ class App extends Component {
   }
 
   substractOneQtytoProduct(_id, id) {
-    axios.post(`${urlapi}/products/substract/${_id}`).then(res=>{
+    axios.post(`${urlapi}/products/${_id}/substract`).then(res=>{
       let products = this.state.products
       if(products[id].quantity===0) return 
       products[id].quantity = res.data.product.quantity
